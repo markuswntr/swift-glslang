@@ -1,0 +1,349 @@
+---
+Name: CGLSLang
+SwiftInferImportAsMember: true
+Availability: available
+
+Typedefs:
+  - Name: glslang_shader_p
+    SwiftName: CShader
+  - Name: glslang_program_p
+    SwiftName: CProgram
+
+Functions:
+  ### CResource
+  - Name: glslang_default_resource
+    SwiftName: CResource._defaultResource()
+    NullabilityOfRet: N
+    SwiftPrivate: true
+  - Name: glslang_default_resource_string
+    NullabilityOfRet: N
+  - Name: glslang_decode_resource_limits
+    SwiftName: CResource._decodeResourceLimits(self:config:)
+    Nullability: [N, N]
+    SwiftPrivate: true
+  ### CShader
+  - Name: glslang_shader_create
+#    SwiftName: CShader.init(input:)
+    Nullability: [N]
+    NullabilityOfRet: O
+  - Name: glslang_shader_delete
+#    SwiftName: CShader.delete(self:)
+    Nullability: [N]
+  - Name: glslang_shader_preprocess
+#    SwiftName: CShader.preprocess(self:input:)
+    Nullability: [N, N]
+  - Name: glslang_shader_parse
+#    SwiftName: CShader.parse(self:input:)
+    Nullability: [N, N]
+  - Name: glslang_shader_get_preprocessed_code
+#    SwiftName: getter:CShader.preprocessed_code(self:)
+    Nullability: [N]
+    NullabilityOfRet: O
+  - Name: glslang_shader_get_info_log
+#    SwiftName: getter:CShader.info_log(self:)
+    Nullability: [N]
+    NullabilityOfRet: O
+  - Name: glslang_shader_get_info_debug_log
+#    SwiftName: getter:CShader.info_debug_log(self:)
+    Nullability: [N]
+    NullabilityOfRet: O
+  ### CProgram
+  - Name: glslang_program_create
+#    SwiftName: CProgram.create()
+    NullabilityOfRet: N
+  - Name: glslang_program_delete
+#    SwiftName: CProgram.delete(self:)
+    Nullability: [N]
+  - Name: glslang_program_add_shader
+#    SwiftName: CProgram.addShader(self:_:)
+    Nullability: [N, N]
+  - Name: glslang_program_link
+#    SwiftName: CProgram.link(self:messages:)
+    Nullability: [N, N]
+  - Name: glslang_program_SPIRV_generate
+#    SwiftName: CProgram.spirvGenerate(self:stage:)
+    Nullability: [N, N]
+  - Name: glslang_program_SPIRV_get_size
+#    SwiftName: getter:CProgram.spirvSize(self:)
+    Nullability: [N]
+    NullabilityOfRet: O
+  - Name: glslang_program_SPIRV_get
+#    SwiftName: CProgram.spirvModule(self:_:)
+    Nullability: [N, N]
+  - Name: glslang_program_SPIRV_get_ptr
+#    SwiftName: getter:CProgram.spirvPointer(self:)
+    Nullability: [N]
+    NullabilityOfRet: O
+  - Name: glslang_program_SPIRV_get_messages
+#    SwiftName: getter:CProgram.spirvMessages(self:)
+    Nullability: [N]
+    NullabilityOfRet: O
+  - Name: glslang_program_get_info_log
+#    SwiftName: getter:CProgram.infoLog(self:)
+    Nullability: [N]
+    NullabilityOfRet: O
+  - Name: glslang_program_get_info_debug_log
+#    SwiftName: getter:CProgram.infoDebugLog(self:)
+    Nullability: [N]
+    NullabilityOfRet: O
+
+Tags:
+  - Name: glslang_resource_s
+    SwiftName: CResource
+  - Name: glslang_input_s
+    SwiftName: CInput
+  - Name: glslang_limits_s
+    SwiftName: CLimits
+  ### Types of "glslang_c_shader_types.h"
+  - Name: glslang_stage_s
+    SwiftName: CSourceStage
+    EnumKind: CFClosedEnum
+  - Name: glslang_stage_mask_s
+    SwiftName: CSourceStageOptions
+    EnumKind: CFOptions
+  - Name: glslang_source_s
+    SwiftName: CSourceLanguage
+    EnumKind: CFClosedEnum
+  - Name: glslang_client_s
+    SwiftName: CTargetClient
+    EnumKind: CFClosedEnum
+  - Name: glslang_target_language_s
+    SwiftName: CTargetLanguage
+    EnumKind: CFClosedEnum
+  - Name: glslang_target_client_version_s
+    SwiftName: CTargetClientVersion
+    EnumKind: CFClosedEnum
+  - Name: glslang_target_language_version_s
+    SwiftName: CTargetLanguageVersion
+    EnumKind: CFClosedEnum
+  - Name: glslang_executable_s
+    SwiftName: CExecutable
+    EnumKind: CFClosedEnum
+  - Name: glslang_optimization_level_s
+    SwiftName: COptimizationLevel
+    EnumKind: CFClosedEnum
+  - Name: glslang_texture_sampler_transform_mode_s
+    SwiftName: CTextureSamplerTransformMode
+    EnumKind: CFClosedEnum
+  - Name: glslang_messages_s
+    SwiftName: CMessageOptions
+    EnumKind: CFOptions
+  - Name: glslang_reflection_options_s
+    SwiftName: CReflectionOptions
+    EnumKind: CFOptions
+  - Name: glslang_profile_s
+    SwiftName: CProfile
+    EnumKind: CFClosedEnum
+
+Enumerators:
+  ### CSourceStage
+  - Name: GLSLANG_STAGE_VERTEX
+    SwiftName: vertex
+  - Name: GLSLANG_STAGE_TESSCONTROL
+    SwiftName: tesselationControl
+  - Name: GLSLANG_STAGE_TESSEVALUATION
+    SwiftName: tesselationEvaluation
+  - Name: GLSLANG_STAGE_GEOMETRY
+    SwiftName: geometry
+  - Name: GLSLANG_STAGE_FRAGMENT
+    SwiftName: fragment
+  - Name: GLSLANG_STAGE_COMPUTE
+    SwiftName: compute
+  - Name: GLSLANG_STAGE_RAYGEN_NV
+    SwiftName: rayGen
+  - Name: GLSLANG_STAGE_INTERSECT_NV
+    SwiftName: intersect
+  - Name: GLSLANG_STAGE_ANYHIT_NV
+    SwiftName: anyHit
+  - Name: GLSLANG_STAGE_CLOSESTHIT_NV
+    SwiftName: closestHit
+  - Name: GLSLANG_STAGE_MISS_NV
+    SwiftName: miss
+  - Name: GLSLANG_STAGE_CALLABLE_NV
+    SwiftName: callable
+  - Name: GLSLANG_STAGE_TASK_NV
+    SwiftName: taskNV
+  - Name: GLSLANG_STAGE_MESH_NV
+    SwiftName: meshNV
+  - Name: GLSLANG_STAGE_COUNT
+    Availability: nonswift
+  ### CSourceStageOptions
+  - Name: GLSLANG_STAGE_VERTEX_MASK
+    SwiftName: vertex
+  - Name: GLSLANG_STAGE_TESSCONTROL_MASK
+    SwiftName: tesselationControl
+  - Name: GLSLANG_STAGE_TESSEVALUATION_MASK
+    SwiftName: tesselationEvaluation
+  - Name: GLSLANG_STAGE_GEOMETRY_MASK
+    SwiftName: geometry
+  - Name: GLSLANG_STAGE_FRAGMENT_MASK
+    SwiftName: fragment
+  - Name: GLSLANG_STAGE_COMPUTE_MASK
+    SwiftName: compute
+  - Name: GLSLANG_STAGE_RAYGEN_NV_MASK
+    SwiftName: rayGen
+  - Name: GLSLANG_STAGE_INTERSECT_NV_MASK
+    SwiftName: intersect
+  - Name: GLSLANG_STAGE_ANYHIT_NV_MASK
+    SwiftName: anyHit
+  - Name: GLSLANG_STAGE_CLOSESTHIT_NV_MASK
+    SwiftName: closestHit
+  - Name: GLSLANG_STAGE_MISS_NV_MASK
+    SwiftName: miss
+  - Name: GLSLANG_STAGE_CALLABLE_NV_MASK
+    SwiftName: callable
+  - Name: GLSLANG_STAGE_TASK_NV_MASK
+    SwiftName: taskNV
+  - Name: GLSLANG_STAGE_MESH_NV_MASK
+    SwiftName: meshNV
+  - Name: GLSLANG_STAGE_MASK_COUNT
+    Availability: nonswift
+  ### CSourceLanguage
+  - Name: GLSLANG_SOURCE_NONE
+    SwiftName: none
+    # Availability: nonswift # TODO: Replaced with optional (nil) eventually
+  - Name: GLSLANG_SOURCE_GLSL
+    SwiftName: glsl
+  - Name: GLSLANG_SOURCE_HLSL
+    SwiftName: hlsl
+  - Name: GLSLANG_SOURCE_COUNT
+    Availability: nonswift
+  ### CTargetClient
+  - Name: GLSLANG_CLIENT_NONE
+    SwiftName: none
+    # Availability: nonswift # TODO: Replaced with optional (nil) eventually
+  - Name: GLSLANG_CLIENT_VULKAN
+    SwiftName: vulkan
+  - Name: GLSLANG_CLIENT_OPENGL
+    SwiftName: opengl
+  - Name: GLSLANG_CLIENT_COUNT
+    Availability: nonswift
+  ### CTargetLanguage
+  - Name: GLSLANG_TARGET_NONE
+    SwiftName: none
+    SwiftPrivate: true
+  - Name: GLSLANG_TARGET_SPV
+    SwiftName: spv
+  - Name: GLSLANG_TARGET_COUNT
+    Availability: nonswift
+  ### CTargetClientVersion
+  - Name: GLSLANG_TARGET_VULKAN_1_0
+    SwiftName: vulkan1_0
+  - Name: GLSLANG_TARGET_VULKAN_1_1
+    SwiftName: vulkan1_1
+  - Name: GLSLANG_TARGET_OPENGL_450
+    SwiftName: opengl450
+  - Name: GLSLANG_TARGET_CLIENT_VERSION_COUNT
+    Availability: nonswift
+  ### CTargetLanguageVersion
+  - Name: GLSLANG_TARGET_SPV_1_0
+    SwiftName: v1_0
+  - Name: GLSLANG_TARGET_SPV_1_1
+    SwiftName: v1_1
+  - Name: GLSLANG_TARGET_SPV_1_2
+    SwiftName: v1_2
+  - Name: GLSLANG_TARGET_SPV_1_3
+    SwiftName: v1_3
+  - Name: GLSLANG_TARGET_SPV_1_4
+    SwiftName: v1_4
+  - Name: GLSLANG_TARGET_SPV_1_5
+    SwiftName: v1_5
+  - Name: GLSLANG_TARGET_LANGUAGE_VERSION_COUNT
+    Availability: nonswift
+  ### CExecutable
+  - Name: GLSLANG_EX_VERTEX_FRAGMENT
+    SwiftName: vertexFragment
+  - Name: GLSLANG_EX_FRAGMENT
+    SwiftName: fragment
+  ### COptimizationLevel
+  - Name: GLSLANG_OPT_NO_GENERATION
+    SwiftName: noGeneration
+  - Name: GLSLANG_OPT_NONE
+    SwiftName: none
+  - Name: GLSLANG_OPT_SIMPLE
+    SwiftName: simple
+  - Name: GLSLANG_OPT_FULL
+    SwiftName: full
+  - Name: GLSLANG_OPT_LEVEL_COUNT
+    Availability: nonswift
+  ### CTextureSamplerTransformMode
+  - Name: GLSLANG_TEX_SAMP_TRANS_KEEP
+    SwiftName: keep
+  - Name: GLSLANG_TEX_SAMP_TRANS_UPGRADE_TEXTURE_REMOVE_SAMPLER
+    SwiftName: upgradeTextureRemoveSampler
+  - Name: GLSLANG_TEX_SAMP_TRANS_COUNT
+    Availability: nonswift
+  ### CMessageOptions
+  - Name: GLSLANG_MSG_DEFAULT_BIT
+    SwiftName: default
+    # Availability: nonswift # TODO: Check if we can remove it (since it is 0)
+  - Name: GLSLANG_MSG_RELAXED_ERRORS_BIT
+    SwiftName: relaxedErrors
+  - Name: GLSLANG_MSG_SUPPRESS_WARNINGS_BIT
+    SwiftName: suppressWarnings
+  - Name: GLSLANG_MSG_AST_BIT
+    SwiftName: ast
+  - Name: GLSLANG_MSG_SPV_RULES_BIT
+    SwiftName: spvRules
+  - Name: GLSLANG_MSG_VULKAN_RULES_BIT
+    SwiftName: vulkanRules
+  - Name: GLSLANG_MSG_ONLY_PREPROCESSOR_BIT
+    SwiftName: onlyPreprocessor
+  - Name: GLSLANG_MSG_READ_HLSL_BIT
+    SwiftName: readHlsl
+  - Name: GLSLANG_MSG_CASCADING_ERRORS_BIT
+    SwiftName: cascadingErrors
+  - Name: GLSLANG_MSG_KEEP_UNCALLED_BIT
+    SwiftName: keepUncalled
+  - Name: GLSLANG_MSG_HLSL_OFFSETS_BIT
+    SwiftName: hlslOffsets
+  - Name: GLSLANG_MSG_DEBUG_INFO_BIT
+    SwiftName: debugInfo
+  - Name: GLSLANG_MSG_HLSL_ENABLE_16BIT_TYPES_BIT
+    SwiftName: hlslEnable16BitTypes
+  - Name: GLSLANG_MSG_HLSL_LEGALIZATION_BIT
+    SwiftName: hlslLegalization
+  - Name: GLSLANG_MSG_HLSL_DX9_COMPATIBLE_BIT
+    SwiftName: hlslDx9Compatible
+  - Name: GLSLANG_MSG_BUILTIN_SYMBOL_TABLE_BIT
+    SwiftName: builtinSymbolTable
+  - Name: GLSLANG_MSG_COUNT
+    Availability: nonswift
+  ### CReflectionOptions
+  - Name: GLSLANG_REFLECTION_DEFAULT_BIT
+    SwiftName: default
+    # Availability: nonswift # TODO: Check if we can remove it (since it is 0)
+  - Name: GLSLANG_REFLECTION_STRICT_ARRAY_SUFFIX_BIT
+    SwiftName: strictArraySuffix
+  - Name: GLSLANG_REFLECTION_BASIC_ARRAY_SUFFIX_BIT
+    SwiftName: basicArraySuffix
+  - Name: GLSLANG_REFLECTION_INTERMEDIATE_IOO_BIT
+    SwiftName: intermediateIOO
+  - Name: GLSLANG_REFLECTION_SEPARATE_BUFFERS_BIT
+    SwiftName: separateBuffers
+  - Name: GLSLANG_REFLECTION_ALL_BLOCK_VARIABLES_BIT
+    SwiftName: allBlockVariables
+  - Name: GLSLANG_REFLECTION_UNWRAP_IO_BLOCKS_BIT
+    SwiftName: unwrapIOBlocks
+  - Name: GLSLANG_REFLECTION_ALL_IO_VARIABLES_BIT
+    SwiftName: allIOVariables
+  - Name: GLSLANG_REFLECTION_SHARED_STD140_SSBO_BIT
+    SwiftName: sharedStd140ssbo
+  - Name: GLSLANG_REFLECTION_SHARED_STD140_UBO_BIT
+    SwiftName: sharedStd140ubo
+  - Name: GLSLANG_REFLECTION_COUNT
+    Availability: nonswift
+  ### CProfile
+  - Name: GLSLANG_BAD_PROFILE
+    SwiftName: bad
+  - Name: GLSLANG_NO_PROFILE
+    SwiftName: none
+    # Availability: nonswift # TODO: Replaced with optional (nil) eventually
+  - Name: GLSLANG_CORE_PROFILE
+    SwiftName: core
+  - Name: GLSLANG_COMPATIBILITY_PROFILE
+    SwiftName: compatibility
+  - Name: GLSLANG_ES_PROFILE
+    SwiftName: embeddedSystems
+  - Name: GLSLANG_PROFILE_COUNT
+    Availability: nonswift

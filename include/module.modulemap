@@ -1,0 +1,7 @@
+module CGLSLang {
+  header "../glslang/Include/glslang_c_shader_types.h"
+  header "../glslang/Include/glslang_c_interface.h"
+  header "../Standalone/resource_limits_c.h"
+  header "./bridge_types.h"
+  export *
+}
